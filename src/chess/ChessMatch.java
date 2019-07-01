@@ -24,7 +24,12 @@ public class ChessMatch {
 		return mat;
 	}
 	
+	private void placeNewPiece(char colunm, int row, ChessPiece piece) {
+		board.placePiece(piece, new ChessPosition(colunm, row).toPosition());
+	}
+	
 	private void initialSetup() {
-		board.placePiece(new Rook(board, Color.WHITE), new Position(0,0));
+		placeNewPiece('b', 6, new Rook(board, Color.WHITE));
+		
 	}
 }
